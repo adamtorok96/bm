@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.util.List;
 
 import hu.adamtorok.beermeter.R;
 import hu.adamtorok.beermeter.Utils;
@@ -122,17 +123,20 @@ public class MeasuringActivity extends AppCompatActivity
         Measurement measurement = null;
 
         if( getName() != null ) {
-            measurement = Measurement
+            List<Measurement> measurements = Measurement
                     .find(Measurement.class, "name = ?", getName())
-                    .get(0)
             ;
-        }
 
-        if( measurement == null ) {
+            if( measurements.size() == 1 ) {
+                measurement = measurements.get(0);
+                measurement.setTime(getTime());
+            }
+        } else {
             measurement = new Measurement(getTime(), getName());
         }
 
-        measurement.save();
+        if( measurement != null )
+            measurement.save();
     }
 
     private float getTime() {

@@ -33,4 +33,8 @@ public class Measurement extends SugarRecord<Measurement> {
     public String getName() {
         return name;
     }
+
+    public void setTime(float time) {
+        this.time = time;
+    }
 }
