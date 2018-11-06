@@ -24,4 +24,13 @@ public class Measurement extends SugarRecord<Measurement> {
         this.time = time;
         this.name = name;
     }
+
+    public double getTime() {
+        return time;
+    }
+
+    @Nullable
+    public String getName() {
+        return name;
+    }
 }
