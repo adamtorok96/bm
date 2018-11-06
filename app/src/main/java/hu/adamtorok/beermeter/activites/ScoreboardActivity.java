@@ -2,6 +2,7 @@ package hu.adamtorok.beermeter.activites;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import hu.adamtorok.beermeter.R;
@@ -18,5 +19,6 @@ public class ScoreboardActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.rvScoreboard);
         mRecyclerView.setAdapter(new ScoreboardAdapter());
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

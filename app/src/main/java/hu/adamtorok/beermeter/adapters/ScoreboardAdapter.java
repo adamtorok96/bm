@@ -1,5 +1,6 @@
 package hu.adamtorok.beermeter.adapters;
 
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 import hu.adamtorok.beermeter.R;
 import hu.adamtorok.beermeter.db.models.Measurement;
@@ -48,10 +50,12 @@ public class ScoreboardAdapter extends RecyclerView.Adapter<ScoreboardAdapter.Vi
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         Measurement measurement = mMeasurements.get(i);
 
+        viewHolder.tvRank.setText(String.format(Locale.getDefault(), "#%d.", i + 1));
         viewHolder.tvScore.setText(String.valueOf(measurement.getTime()));
 
         if( measurement.getName() == null ) {
             viewHolder.tvName.setText(R.string.unnamed);
+            viewHolder.tvName.setTypeface(viewHolder.tvName.getTypeface(), Typeface.ITALIC);
         } else {
             viewHolder.tvName.setText(measurement.getName());
         }
@@ -63,12 +67,14 @@ public class ScoreboardAdapter extends RecyclerView.Adapter<ScoreboardAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public TextView tvRank;
         public TextView tvScore;
         public TextView tvName;
 
         public ViewHolder(@NonNull LinearLayout itemView) {
             super(itemView);
 
+            tvRank = itemView.findViewById(R.id.tvRank);
             tvScore = itemView.findViewById(R.id.tvScore);
             tvName = itemView.findViewById(R.id.tvName);
         }
