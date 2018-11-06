@@ -22,7 +22,7 @@ public class Utils {
         return TimeUnit.SECONDS.convert(time, TimeUnit.NANOSECONDS);
     }
 
-    public static long nanoTimeToMilliSeconds(long time) {
-        return TimeUnit.MICROSECONDS.convert(time, TimeUnit.NANOSECONDS);
+    public static float nanoTimeToMilliSeconds(long time) {
+        return time / 1000000000.0f; // TimeUnit.MILLISECONDS.convert(time, TimeUnit.NANOSECONDS);
     }
 }

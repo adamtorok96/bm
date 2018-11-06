@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="hu.adamtorok.beermeter">
 
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+
     <application
         android:icon="@mipmap/ic_launcher"
         tools:replace="android:icon"
@@ -11,16 +15,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.orm.SugarApp">
-        <activity android:name=".activites.MainActivity">
+        <activity
+            android:name=".activities.MainActivity"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activites.MeasuringActivity" />
-        <activity android:name=".activites.ScoreboardActivity"></activity>
-        <activity android:name=".activites.SettingsActivity" />
+        <activity android:name=".activities.MeasuringActivity" />
+        <activity android:name=".activities.ScoreboardActivity"></activity>
+        <activity android:name=".activities.SettingsActivity" />
 
         <meta-data android:name="DATABASE" android:value="scoreboard.db" />
         <meta-data android:name="VERSION" android:value="3" />

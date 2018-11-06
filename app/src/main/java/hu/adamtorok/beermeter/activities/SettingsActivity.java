@@ -1,4 +1,4 @@
-package hu.adamtorok.beermeter.activites;
+package hu.adamtorok.beermeter.activities;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
