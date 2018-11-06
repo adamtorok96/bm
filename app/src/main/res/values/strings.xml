@@ -4,4 +4,9 @@
     <string name="scoreboard">Scoreboard</string>
     <string name="exit">Exit</string>
     <string name="unnamed">Unnamed</string>
+    <string name="name">Name:</string>
+    <string name="clear">Clear</string>
+    <string name="hint_name">Name</string>
+    <string name="sensitivity">Sensitivity</string>
+    <string name="settings">Settings</string>
 </resources>

@@ -20,6 +20,7 @@
         </activity>
         <activity android:name=".activites.MeasuringActivity" />
         <activity android:name=".activites.ScoreboardActivity"></activity>
+        <activity android:name=".activites.SettingsActivity" />
 
         <meta-data android:name="DATABASE" android:value="scoreboard.db" />
         <meta-data android:name="VERSION" android:value="3" />
