@@ -1,0 +1,20 @@
+package hu.adamtorok.beermeter.activites;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+
+import hu.adamtorok.beermeter.R;
+
+public class ScoreboardActivity extends AppCompatActivity {
+
+    private RecyclerView mRecylerView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_scoreboard);
+
+        mRecylerView = findViewById(R.id.rvScoreboard);
+    }
+}
